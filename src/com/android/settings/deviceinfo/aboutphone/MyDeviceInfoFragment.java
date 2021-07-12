@@ -167,6 +167,29 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        Context context = getContext();
+        if (context != null) {
+            context.unregisterReceiver(mSimStateReceiver);
+        } else {
+            Log.i(LOG_TAG, "context already null, not unregistering SimStateReceiver");
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Context context = getContext();
+        if (context != null) {
+            context.registerReceiver(mSimStateReceiver,
+                    new IntentFilter(TelephonyIntents.ACTION_SIM_STATE_CHANGED));
+        } else {
+            Log.i(LOG_TAG, "context is null, not registering SimStateReceiver");
+        }
+    }
+
+    @Override
     protected String getLogTag() {
         return LOG_TAG;
     }
