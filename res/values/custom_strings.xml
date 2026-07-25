@@ -22,4 +22,7 @@
 
     <!-- Lineage custom Source -->
     <string name="lineage_custom_source">Custom Source By</string>
+
+    <!-- About Phone -->
+    <string name="device_name">Device</string>
 </resources>
