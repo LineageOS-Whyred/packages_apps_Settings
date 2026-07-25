@@ -20,4 +20,6 @@
     <string name="maintainer" translatable="false">Maintainer</string>
     <string name="maintainer_name" translatable="false">DarkElixir</string>
 
+    <!-- Lineage custom Source -->
+    <string name="lineage_custom_source">Custom Source By</string>
 </resources>
